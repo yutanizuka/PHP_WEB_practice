@@ -1,7 +1,5 @@
 <?php
-
-$today = date('Y-m-d H:i:s');
-
+$name = 'Taro';
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -11,7 +9,7 @@ $today = date('Y-m-d H:i:s');
 </head>
 <body>
   <p>Hello, PHP!</p>
-  <p>Today: <?= $today  ?></p>
+  <p>Today: <?= htmlspecialchars($name,ENT_QUOTES,'UTF-8');  ?></p>
 
 </body>
 </html>
