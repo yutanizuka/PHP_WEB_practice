@@ -5,7 +5,11 @@ require('../app/functions.php');
 ?>
 
 <form action="result.php" method="get">
-  <textarea type="text" name="message"></textarea>  
+  <select name="color">
+  <option value="orange">Orange</option>
+  <option value="pink">Pink</option> 
+  <option value="gold">Gold</option> 
+</select>
   <button>Send</button>
 </form>
 
