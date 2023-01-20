@@ -5,10 +5,9 @@ require('../app/functions.php');
 ?>
 
 <form action="result.php" method="get">
-  <select name="colors[]" multiple>
-  <option value="orange">Orange</option>
-  <option value="pink">Pink</option> 
-  <option value="gold">Gold</option> 
+  <label><input type="checkbox" name="colors[]" value="orange"> Orange</label>
+  <label><input type="checkbox" name="colors[]" value="Pink"> Pink</label>
+  <label><input type="checkbox" name="colors[]" value="gold"> Gold</label>
 </select>
   <button>Send</button>
 </form>
