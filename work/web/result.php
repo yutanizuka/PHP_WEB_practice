@@ -2,10 +2,9 @@
 <?php
 require('../app/functions.php');
 
-$color = filter_input(INPUT_GET, 'color');
-  // $color = isset($color) ? $color : 'None selected';
-  // $color = $color ?? 'None selected';
-$color = filter_input(INPUT_GET, 'color') ?? 'None selected';
+
+$colorFromGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
+setcookie('color', $colorFromGet); # setcookの前でechoやphpの開始タグの前にhtmlを書いてはいけない
 
 include('../app/_parts/_header.php');
 ?>
