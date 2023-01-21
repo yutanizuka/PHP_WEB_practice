@@ -4,7 +4,8 @@ require('../app/functions.php');
 
 
 $colorFromGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
-setcookie('color', $colorFromGet); # setcookの前でechoやphpの開始タグの前にhtmlを書いてはいけない
+$_SESSION['color'] = $colorFromGet;
+// setcookie('color', $colorFromGet); # setcookの前でechoやphpの開始タグの前にhtmlを書いてはいけない
 
 include('../app/_parts/_header.php');
 ?>
