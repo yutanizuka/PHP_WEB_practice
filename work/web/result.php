@@ -2,16 +2,22 @@
 <?php
 require('../app/functions.php');
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$message = trim(filter_input(INPUT_POST, 'message'));
+$message = $message !== '' ? $message : '...';
 
-$colorFromGet = filter_input(INPUT_GET, 'color') ?? 'transparent';
-$_SESSION['color'] = $colorFromGet;
-// setcookie('color', $colorFromGet); # setcookの前でechoやphpの開始タグの前にhtmlを書いてはいけない
+$filename = '../app/messages.txt';
+$fp = fopen($filename,'a');
+fwrite($fp, $message . "\n");
+fclose($fp);
 
+} else {
+  exit('Invalid Request');
+}
 include('../app/_parts/_header.php');
 ?>
 
-
-<p><?= h($color);?>  </p>
+<p>Message added!</p>
 <p><a href="index.php">Go back</a></p>
 
 
